@@ -36,7 +36,7 @@ public class FeatureExtractor {
     }
 
     private static double calculateRadiusRatio(ShapeData shapeData) {
-        double rr = shapeData.getMinorAxis() / shapeData.getMajorAxis();
+        double rr = shapeData.getMajorAxis() / shapeData.getMinorAxis();
 
         return rr;
     }
