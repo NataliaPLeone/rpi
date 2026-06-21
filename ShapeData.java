@@ -1,4 +1,3 @@
-
 import ij.ImagePlus;
 
 import java.awt.Point;
@@ -103,12 +102,12 @@ public class ShapeData {
         }
 
         // vetor unitário do eixo maior
-        dx /= axisLength;
-        dy /= axisLength;
+        double ux = dx / axisLength;
+        double uy = dy / axisLength;
 
         // vetor unitário perpendicular
-        double px = -dy;
-        double py = dx;
+        double px = -uy;
+        double py = ux;
 
         double maxWidth = 0;
 
@@ -158,7 +157,7 @@ public class ShapeData {
         }
 
         if (borderPixels.isEmpty()) {
-            return new double[]{0, 0};
+            return new double[]{ 0, 0 };
         }
 
         Object[] major = calculateMajorAxis(borderPixels);
